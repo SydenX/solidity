@@ -5,13 +5,8 @@ import "@openzeppelin/contracts/security/Pausable.sol";
 
 contract FirstPool is Ownable, Pausable{
 
-    function pause() public onlyOwner{
-        _pause();
-    }
-
-    function unpause() public onlyOwner{
-        _unpause();
-    }
+    function pause() public onlyOwner{ _pause(); }
+    function unpause() public onlyOwner{ _unpause(); }
 
     struct wallet {
         uint balance;
@@ -44,7 +39,7 @@ contract FirstPool is Ownable, Pausable{
         Wallets[msg.sender].totalSent += msg.value;
     }
     
-    function withdraw(uint _amount) external  payable {
+    function withdraw(uint _amount) public payable {
         if(Wallets[msg.sender].balance >= _amount){
             Wallets[msg.sender].balance-=_amount;
             Wallets[msg.sender].totalWithdraw+=_amount;
@@ -52,7 +47,11 @@ contract FirstPool is Ownable, Pausable{
         }
     }
 
-    function getTotalBalance() public view returns (uint){
+    function withdrawAll() public payable {
+        withdraw(Wallets[msg.sender].balance);
+    }
+
+    function getGlobalBalance() public view returns (uint){
         return address(this).balance;
     }
 }

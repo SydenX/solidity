@@ -65,7 +65,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "getTimesSent",
+				"name": "getGlobalBalance",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -78,7 +78,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "getTotalBalance",
+				"name": "getTimesSent",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -189,6 +189,13 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "withdrawAll",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"stateMutability": "payable",
 				"type": "receive"
 			}
@@ -227,7 +234,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/FirstTransfer.sol": "FirstPool"
+			"contracts/FirstPool.sol": "FirstPool"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -265,12 +272,12 @@
 				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
 			]
 		},
-		"contracts/FirstTransfer.sol": {
-			"keccak256": "0xd6c01c9287f62940981a6284d880475b9ade71f3edbe3373a60763138c0433c9",
+		"contracts/FirstPool.sol": {
+			"keccak256": "0x534c7a7448400cbf9fe8c15dfe3899b11480ff714f8a0e9766cfec200c8fe162",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e671fd9a6b957c64aa8ac19dd2b8f59d57d378558deb7f7142f9a4ad27a03963",
-				"dweb:/ipfs/QmW8prnxSgoPhf5hTeMLvZAnia7W6QBeowWdT97tuPtqoc"
+				"bzz-raw://0eab8320993aa34cda984c89ea4d8def128483e1c4a23e1985f10cccb1f8daa0",
+				"dweb:/ipfs/QmdPnftoFcQKEeXD3gHQ73S4uKceR5h8UjweGDeab1Vf6V"
 			]
 		}
 	},
