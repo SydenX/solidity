@@ -7,7 +7,20 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "getBalance",
+				"name": "getAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getNumber",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -20,38 +33,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "getTimesSent",
+				"name": "getString",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getTotalBalance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getTotalSent",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -60,24 +47,41 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address payable",
-						"name": "_to",
+						"internalType": "address",
+						"name": "_address",
 						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
 					}
 				],
-				"name": "withdraw",
+				"name": "setAddress",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"stateMutability": "payable",
-				"type": "receive"
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_number",
+						"type": "uint256"
+					}
+				],
+				"name": "setNumber",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_newString",
+						"type": "string"
+					}
+				],
+				"name": "setString",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -93,7 +97,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/FirstTransfer.sol": "FirstApproach"
+			"FirstMap.sol": "FirstApproach"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -107,12 +111,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/FirstTransfer.sol": {
-			"keccak256": "0x03ec1d475a8f26ed2868f0a87f02508f5c38dedccbe3884639bd169d5e52268d",
+		"FirstMap.sol": {
+			"keccak256": "0x73d130f74b4ce784d80366967c6edb6ffcef19fd027ac8843d61dc417fa1ba45",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://802ca06cee2c1d9409cf9d820c281a58fb9fd4460edcd00037149f8c8cd291a4",
-				"dweb:/ipfs/QmViH5g5NNKXjqRGe8Qx7rgw7pUmfoFw89qvjpCX66a5Fx"
+				"bzz-raw://7b42c96ff99e292f9b15cd6ed27f9c065b1b194b1f2b53ee668f38609d917b16",
+				"dweb:/ipfs/QmW2MHs5MesVpYi4G7oNDcPD8xxUwdF5obA8gbPy7wHs67"
 			]
 		}
 	},
