@@ -1,12 +1,23 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.21;
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
 
-contract FirstApproach{
+contract FirstPool is Ownable, Pausable{
+
+    function pause() public onlyOwner{
+        _pause();
+    }
+
+    function unpause() public onlyOwner{
+        _unpause();
+    }
 
     struct wallet {
         uint balance;
         uint timesSent;
         uint totalSent;
+        uint totalWithdraw;
     }
 
     mapping(address => wallet) Wallets;
@@ -23,16 +34,21 @@ contract FirstApproach{
         return Wallets[msg.sender].totalSent;
     }
 
+    function getTotalWithdraw() public view returns(uint){
+        return Wallets[msg.sender].totalWithdraw;
+    }
+
     receive() external payable {
         Wallets[msg.sender].balance += msg.value;
         Wallets[msg.sender].timesSent += 1;
         Wallets[msg.sender].totalSent += msg.value;
     }
-
-    function withdraw(address payable _to, uint _amount) public {
+    
+    function withdraw(uint _amount) external  payable {
         if(Wallets[msg.sender].balance >= _amount){
             Wallets[msg.sender].balance-=_amount;
-            _to.transfer(_amount);
+            Wallets[msg.sender].totalWithdraw+=_amount;
+            payable(msg.sender).transfer(_amount);
         }
     }
 
